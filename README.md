@@ -1,6 +1,6 @@
 # PosterPy
 
-This is a python script that helps you to search, download movie posters and set them as folder icons. PosterPy uses the popular [IMDbPY](https://imdbpy.readthedocs.io/en/latest/) package to search movies and [TMDb a.k.a The Movie Data Base](https://www.themoviedb.org/) API to download movie posters.
+This is a python script that helps you to search, download movie posters and set them as folder icons. PosterPy uses the popular [IMDbPY](https://imdbpy.github.io/) package to search movies and [TMDb a.k.a The Movie Data Base](https://www.themoviedb.org/) API to download movie posters.
 
 ![iaa1](https://user-images.githubusercontent.com/55880211/80022395-a2b95700-84f9-11ea-8dca-d0f0eff217bd.gif)
 
@@ -42,3 +42,10 @@ python posterpy.py
 
 ## License
 MIT ©[sameera-madushan](https://github.com/sameera-madushan)
+
+## Attribution
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/55880211/80030773-4a3c8680-8506-11ea-876c-31501affbf0c.jpg">
+  Movie posters are powered by themoviedb.org
+</p>
