@@ -1,16 +1,16 @@
+#!/usr/bin/env python3
 # coded by sameera madushan
 
 import os
-import time
-import imdb
 import shutil
-import requests
-import questionary
-from tqdm import tqdm
-from PIL import Image, ImageOps 
 from tkinter import Tk, filedialog
+import requests
+from PIL import Image, ImageOps
+from tqdm import tqdm
+import imdb
+import questionary
 
-banner = (r'''                                                                  
+banner = (r'''
 
 
 ooooooooo.                          .                      ooooooooo.               
@@ -42,7 +42,7 @@ def api_key():
                     return key
                 else:
                     pass
-                
+
             print("\nTo register for an API key, Visit: https://www.themoviedb.org/account/signup")
             get_key = input("API key required. Please enter the API key: ")
             req = requests.get(SAMPLE_URL.format(get_key))
@@ -51,8 +51,8 @@ def api_key():
                 f.write(get_key)
                 f.close()
             else:
-                print("\nInvalid API key: You must be granted a valid key.")            
-    except OSError :
+                print("\nInvalid API key: You must be granted a valid key.")
+    except OSError:
         print("\nUnknown Error")
 
 def search_movie():
@@ -75,10 +75,10 @@ def search_movie():
             p = ("{: <10}".format(str(get_id))+ get_title + " " + "(" + str(get_year) + ")")
             choices_list.append(p)
 
-        movie_list = questionary.select("Oh! there's alot. What did you mean? ", choices=choices_list).ask()  
+        movie_list = questionary.select("Oh! there's alot. What did you mean? ", choices=choices_list).ask()
         get_id = movie_list.split()
         IMDB_ID = get_id[0]
-        
+
         return IMDB_ID
 
     except KeyboardInterrupt:
@@ -97,7 +97,7 @@ def get_image_url():
             for k, v in i.items():
                 if k == 'poster_path':
                     image_url = 'http://image.tmdb.org/t/p/w500/' + v
-                    return [image_url, v]                    
+                    return [image_url, v]
                 # if i['poster_path'] is None:
                 #     print("No Poster Found")
                 #     quit()
@@ -118,8 +118,8 @@ def download_poster():
         _response = requests.get(url).content
         file_size_request = requests.get(url, stream=True)
         file_size = int(file_size_request.headers['Content-Length'])
-        block_size = 1024 
-        t=tqdm(total=file_size, unit='B', unit_scale=True, desc="Downloading", ascii=True)
+        block_size = 1024
+        t = tqdm(total=file_size, unit='B', unit_scale=True, desc="Downloading", ascii=True)
         with open(filename[1:], 'wb') as f:
             for data in file_size_request.iter_content(block_size):
                 t.update(len(data))
@@ -135,7 +135,7 @@ def convert():
     icon = os.getcwd() + "\\poster.ico"
     img = Image.open(download_poster())
     img = ImageOps.expand(img, (69, 0, 69, 0), fill=0)
-    img = ImageOps.fit(img, (300,300)).convert("RGBA")
+    img = ImageOps.fit(img, (300, 300)).convert("RGBA")
 
     datas = img.getdata()
     newData = []
@@ -182,10 +182,9 @@ def change_folder_icon():
     if os.path.isfile(get_folder + "\\desktop.ini"):
         print('\nA desktop.ini file is already present. Delete the older one before applying a new one.')
     else:
-        f = open(get_folder + "\\desktop.ini","w+")
-        f.write("[.ShellClassInfo]\n")
-        f.write("IconResource=poster.ico,0")
-        f.close()
+        with open(get_folder + "\\desktop.ini", "w+") as f:
+            f.write("[.ShellClassInfo]\n")
+            f.write("IconResource=poster.ico,0")
 
         os.system('attrib +r \"{}\"'.format(get_folder))
         os.system('attrib +h \"{}\\desktop.ini\"'.format(get_folder))
