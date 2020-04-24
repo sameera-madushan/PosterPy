@@ -43,6 +43,16 @@ python posterpy.py
 ## License
 MIT ©[sameera-madushan](https://github.com/sameera-madushan)
 
+## Contributors
+
+Thanks goes to this wonderful person. :heart:
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/sdushantha"><img src="https://avatars1.githubusercontent.com/u/27065646?s=400&u=d50283901a14e11d6d387b7af1019bdaf12d3f93&v=4" width="100px;" alt=""/><br /><sub><b>Siddharth Dushantha</b></sub></a></td>
+
+</table>
+
 ## Attribution
 
 <p align="center">
