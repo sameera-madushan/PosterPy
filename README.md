@@ -18,7 +18,7 @@ To remove the poster icon from a folder, just delete the .ico and desktop.ini fi
 
 ![Untitled collage](https://user-images.githubusercontent.com/55880211/80029365-4f98d180-8504-11ea-84e3-f94a1fe64e09.png)
 
-### Git Installation
+## Git Installation
 ```
 # clone the repo
 $ git clone https://github.com/sameera-madushan/PosterPy.git
@@ -36,7 +36,7 @@ $ pip3 install -r requirements.txt
 python posterpy.py
 ```
 
-### Support & Contributions
+## Support & Contributions
 - Please ⭐️ this repository if this project helped you!
 - Contributions of any kind welcome!
 
