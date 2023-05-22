@@ -2,4 +2,4 @@ IMDbPY==6.8
 Pillow==9.0.0
 questionary==1.5.2
 tqdm==4.43.0
-requests==2.23.0
+requests==2.31.0
